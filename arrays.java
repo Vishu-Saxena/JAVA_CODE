@@ -13,6 +13,7 @@ public class arrays {
                 }
                 System.out.println();
             
+                
             
         }
     } 

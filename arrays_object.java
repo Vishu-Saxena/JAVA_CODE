@@ -19,8 +19,6 @@ public class arrays_object{
         studentArray[0] = s1;
         studentArray[1]= s2;
         studentArray[2]= s3;
-
-        
         for(student stud : studentArray){
             System.out.println(stud.name + " " + stud.marks);
         }
