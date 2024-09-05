@@ -1,52 +1,39 @@
 import java.util.Scanner;
 
 
-class calculator{
-    public void add(int a , int b){
-        System.out.println(a+b);
+class Caclculator{
+    public int add( int a , int b){
+        return a+b;
     }
-
-    public void increment(int a){
-        System.out.println(++a);
-    }
-
-    public int increment(double a){
-        return (int) ++a;
-    }
-
-    public void add(int a , int b , int c){
-        System.out.println(a+b+c);
+    public int sub(int a , int b){
+        return a-b;
     }
 }
 
+class AdvanceCalc extends Caclculator {
+    public int multiply(int x , int y){
+        return x*y;
+    }
+    public int devide(int divident , int devisor){
+        return divident/devisor;
+    }
+}
+class ScientificCalc extends AdvanceCalc{
+    public int reminder(int x , int y){
+        return x%y;
+    }
+}
 
 
 public class Practice {
 
     public static void main(String[] args) {
-        int row ;
-        Scanner s = new Scanner(System.in);
-        System.out.print("enter number of rows : ");
-        row = s.nextInt();
-
-       int num[][] = new int[row][];
-       for(int i =0 ; i< row ; i++){
-        int col;
-        System.out.println("enter the first colomn number : ");
-        col = s.nextInt();
-        num[i] = new int[col];
-       }
-       for(int i =0; i<row ; i++){
-        for(int j =0 ; j < num[i].length ; j++){
-            num[i][j] = (int)(Math.random()*10);
-            System.out.print(num[i][j] + " ");
-        }
-        System.err.println();
-       }
-        
-        System.out.println("");
-       }
-
-       
-       
+        ScientificCalc sc1 = new ScientificCalc();
+        System.out.println(sc1.add(2, 8));
+        System.out.println(sc1.sub(6, 2));
+        System.out.println( sc1.multiply(2, 4));
+        System.out.println(sc1.devide(8, 2));
+        System.out.println(sc1.reminder(9, 5));
     }
+
+}
